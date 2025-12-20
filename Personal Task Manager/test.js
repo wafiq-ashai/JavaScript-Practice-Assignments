@@ -8,3 +8,20 @@ taskManager.addTask('Car wash', 'low', '2025-12-11' )
 console.log(taskManager.tasks);
 
 //Test removeTask()
+taskManager.removeTask(0) // Task not found because we don't have id = 0
+taskManager.removeTask(2)
+
+//Now lets check our ful tasks list again
+console.log(taskManager.tasks);  //task 2 has been deleted
+
+// markComplete and findTask
+
+taskManager.markComplete(1)
+console.log(taskManager.findTask(1))
+
+//listTasks
+console.log(taskManager.listTasks());
+
+
+
+
