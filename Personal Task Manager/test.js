@@ -22,6 +22,22 @@ console.log(taskManager.findTask(1))
 //listTasks
 console.log(taskManager.listTasks());
 
+//editTask
+
+taskManager.editTask(1, {
+    title: 'New title',
+    priority: undefined,
+    dueDate: '2026-01-08'
+})
+console.log(taskManager.findTask(1));
+
+//getOverdueTasks
+console.log(taskManager.getOverdueTasks());
+
+//generateSummary
+taskManager.generateSummary()
+
+
 
 
 

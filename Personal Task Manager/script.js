@@ -66,6 +66,93 @@ let taskManager = {
             }
         }
         return list
+    },
+
+    editTask: function(id, updates) {
+        for (let i = 0; i < this.tasks.length; i++) {
+            if (id == this.tasks[i].id) {
+                let currentTask = this.tasks[i]
+
+                if (updates.title !== undefined) {
+                    currentTask.title = updates.title
+                }
+
+                if (updates.priority !== undefined) {
+                    currentTask.priority = updates.priority
+                }
+
+                if (updates.dueDate !== undefined) {
+                    currentTask.dueDate = updates.dueDate
+                }
+                console.log('Task updated sucessfully');
+                
+
+                return
+
+            }
+        }
+        console.log('Task not found!');
+        
+    },
+    getOverdueTasks: function() {
+        let overDueTasks = []
+        let now = new Date()
+        for (let i = 0; i < this.tasks.length; i++) {
+            let currentTask = this.tasks[i]
+            let currentDuedate = new Date(currentTask.dueDate)
+
+            if(currentTask.completed === false && currentDuedate < now) {
+                overDueTasks.push(currentTask)
+
+            }
+        }
+        return overDueTasks 
+    },
+
+    generateSummary: function() {
+        let completedTasks = []
+        let highTasks = []
+        let lowTasks = []
+        let mediumTasks = []
+         for (let i = 0; i < this.tasks.length; i++) {
+            if(this.tasks[i].completed === true) {
+                completedTasks.push(this.tasks[i])
+            }
+
+            if(this.tasks[i].priority == 'high') {
+                highTasks.push(this.tasks[i])
+            }
+
+              if(this.tasks[i].priority == 'low') {
+                lowTasks.push(this.tasks[i])
+            }
+              if(this.tasks[i].priority == 'medium') {
+                mediumTasks.push(this.tasks[i])
+            }
+         }
+        let a = completedTasks.length
+        let b = this.tasks.length
+        let c = this.getOverdueTasks().length
+        console.log('-------------Summary-----------------');
+        console.log(`Total number of tasks: ${this.tasks.length}`);
+        console.log(`Number of completed tasks: ${completedTasks.length}`);
+        console.log(`Number of pending tasks: ${b - a}`);
+        console.log(`Number of overdue tasks: ${c}`);
+        
+        console.log(`High Priority Tasks: ${highTasks.length}`);
+        console.log(`Low Priority Tasks: ${lowTasks.length}`);
+        console.log(`Medium Priority Tasks: ${mediumTasks.length}`);
+        
+        
+        
+        
+        
+        
     }
 
+
+
+
+
 }
+    
