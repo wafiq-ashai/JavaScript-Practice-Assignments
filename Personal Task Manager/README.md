@@ -1,1 +1,1 @@
-A task management system that supports adding, updating, removing, and querying tasks, including overdue tracking, and summary reporting.
+A Task Management System that supports adding, updating, removing, and querying tasks, including overdue tracking, and summary reporting.
