@@ -110,43 +110,40 @@ let taskManager = {
     },
 
     generateSummary: function() {
-        let completedTasks = []
-        let highTasks = []
-        let lowTasks = []
-        let mediumTasks = []
+        let completedTasks = 0
+        let highTasks = 0
+        let lowTasks = 0
+        let mediumTasks = 0
          for (let i = 0; i < this.tasks.length; i++) {
             if(this.tasks[i].completed === true) {
-                completedTasks.push(this.tasks[i])
+                completedTasks++
             }
 
             if(this.tasks[i].priority == 'high') {
-                highTasks.push(this.tasks[i])
+                highTasks++
             }
 
               if(this.tasks[i].priority == 'low') {
-                lowTasks.push(this.tasks[i])
+                lowTasks++
             }
               if(this.tasks[i].priority == 'medium') {
-                mediumTasks.push(this.tasks[i])
+                mediumTasks++
             }
          }
-        let a = completedTasks.length
-        let b = this.tasks.length
-        let c = this.getOverdueTasks().length
-        console.log('-------------Summary-----------------');
-        console.log(`Total number of tasks: ${this.tasks.length}`);
-        console.log(`Number of completed tasks: ${completedTasks.length}`);
-        console.log(`Number of pending tasks: ${b - a}`);
-        console.log(`Number of overdue tasks: ${c}`);
-        
-        console.log(`High Priority Tasks: ${highTasks.length}`);
-        console.log(`Low Priority Tasks: ${lowTasks.length}`);
-        console.log(`Medium Priority Tasks: ${mediumTasks.length}`);
-        
-        
-        
-        
-        
+        let Total = this.tasks.length
+        let getResult = this.getOverdueTasks().length
+        let summary = {
+            totalTasks: this.tasks.length,
+            completedTasks: completedTasks,
+            pendingTasks: Total - completedTasks,
+            overDueTasks: getResult,
+            byPriority: {
+                high: highTasks,
+                medium: mediumTasks,
+                low: lowTasks,
+            },
+        }
+        return summary  
         
     }
 

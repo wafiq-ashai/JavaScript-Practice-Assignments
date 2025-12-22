@@ -35,7 +35,7 @@ console.log(taskManager.findTask(1));
 console.log(taskManager.getOverdueTasks());
 
 //generateSummary
-taskManager.generateSummary()
+console.log(taskManager.generateSummary())
 
 
 
