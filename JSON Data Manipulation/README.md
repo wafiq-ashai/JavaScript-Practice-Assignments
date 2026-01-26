@@ -1,0 +1,1 @@
+This exercise demonstrates how to parse and modify JSON data in JavaScript. It includes adding new fields, rounding numeric values, and converting the updated object back into a JSON string.
