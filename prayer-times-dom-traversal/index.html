@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Webpage</title>
+  </head>
+
+  <body>
+    <h1>Traversing the DOM</h1>
+
+    <div id="prayer-app">
+      <header class="app-header">
+        <h2>Daily Prayer Times</h2>
+        <div class="location">Makkah</div>
+      </header>
+
+      <main class="prayer-times">
+        <div class="prayer-card" id="fajr">
+          <h3>Fajr</h3>
+          <time>5:48 AM</time>
+          <div class="status">upcoming</div>
+        </div>
+
+        <div class="prayer-card" id="dhuhr">
+          <h3>Dhuhr</h3>
+          <time>1:15 PM</time>
+          <div class="status">next</div>
+        </div>
+
+        <div class="prayer-card" id="asr">
+          <h3>Asr</h3>
+          <time>4:30 PM</time>
+          <div class="status">--</div>
+        </div>
+
+        <div class="prayer-card" id="maghrib">
+          <h3>Maghrib</h3>
+          <time>7:21 PM</time>
+          <div class="status">--</div>
+        </div>
+
+        <div class="prayer-card" id="isha">
+          <h3>Isha</h3>
+          <time>8:35 PM</time>
+          <div class="status">--</div>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <div class="last-updated">Last updated: 5 minutes ago</div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
