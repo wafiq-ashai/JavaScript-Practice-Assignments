@@ -1,0 +1,1 @@
+A dynamic prayer schedule manager where users can add new prayer, delete existing times, edit times using edit button and mark prayers as completed by clicking on any prayer
